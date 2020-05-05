@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="#5b5b5b"
         android:gravity="center"
@@ -32,7 +32,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
         android:background="@color/backgound_bottom"
@@ -41,7 +41,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/signup_discribtion"
+            android:text="@string/login_discribtion"
             android:layout_marginLeft="20dp"/>
 
         <EditText
@@ -49,25 +49,17 @@
             android:layout_height="wrap_content"
             android:hint="@string/username"
             />
+
         <EditText
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:hint="@string/password"
             />
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/retype_password"
-            />
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/phone_number"
-            />
+
         <Button
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="@string/signup"
+            android:text="@string/login"
             android:textColor="@android:color/black"/>
     </LinearLayout>
 </LinearLayout>

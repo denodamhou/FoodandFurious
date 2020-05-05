@@ -2,8 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="white"
+    android:background="@color/backgound_bottom"
     android:gravity="center"
+
     >
 
     <ImageView
@@ -12,24 +13,27 @@
         android:layout_height="200dp" />
 
     <TextView
-        android:text="Welcome to Food&amp;Furious"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:text="@string/greeting_text"
+        android:textColor="@android:color/black"
         android:textSize="20dp"
-        />
+        android:textStyle="bold" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login">
+        android:text="@string/login"
+        >
 
     </Button>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="signup">
+        android:text="@string/signup"
+
+        >
 
     </Button>
 </LinearLayout>

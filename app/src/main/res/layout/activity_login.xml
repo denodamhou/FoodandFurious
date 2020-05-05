@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:textAlignment="center"
-            android:text="Welcome to Food&amp;Furious"/>
+            android:text="@string/greeting_text"/>
 
 
     </LinearLayout>
@@ -34,31 +34,31 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:background="#FFFFFF"
+        android:background="@color/backgound_bottom"
         android:textColor="@android:color/white">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter Your Existing Account"
+            android:text="@string/login_discribtion"
             android:layout_marginLeft="20dp"/>
 
         <EditText
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:hint="Username"
+            android:hint="@string/username"
             />
 
         <EditText
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:hint="Retype Password"
+            android:hint="@string/password"
             />
 
         <Button
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="@string/login"
             android:textColor="@android:color/black"/>
     </LinearLayout>
 </LinearLayout>

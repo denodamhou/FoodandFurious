@@ -1,0 +1,15 @@
+
+<resources>
+
+    <string name="app_name">សេវាកម្មដឹកជញ្ជូនម្ហូប</string>
+    <string name="greeting_text">Food&amp;Furious សូមស្វាគមន៍</string>
+    <string name="login">ចូល</string>
+    <string name="signup">ចុះឈ្មោះ</string>
+    <string name="login_discribtion">បញ្ចូលគណនីដែលមានស្រាប់របស់អ្នក</string>
+    <string name="username">ឈ្មោះអ្នកប្រើប្រាស់</string>
+    <string name="password">ពាក្យសម្ងាត់</string>
+    <string name="signup_discribtion">បង្កើតគណនីថ្មី</string>
+    <string name="retype_password">វាយលេខសម្ងាត់ម្តងទៀត</string>
+    <string name="phone_number">លេខទូរសព្ទ</string>
+
+</resources>
