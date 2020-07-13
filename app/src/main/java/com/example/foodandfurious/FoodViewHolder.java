@@ -14,11 +14,18 @@ public class FoodViewHolder extends RecyclerView.ViewHolder  {
 
     public FoodViewHolder(@NonNull View itemView) {
         super(itemView);
+
+        txtName = itemView.findViewById(R.id.txt_Name);
+        txtPrice = itemView.findViewById(R.id.txt_Price);
+        txtInfo = itemView.findViewById(R.id.txt_Info);
+
     }
+
     public void bind(Food food){
         txtName.setText(food.getName());
         txtPrice.setText(food.getPrice());
         txtInfo.setText(food.getInfo());
-
+//        senderProfile.setImageDrawable(Drawable.createFromPath((message.getSenderProfile())));
+//        txtBody.setText(message.getBody());
     }
 }

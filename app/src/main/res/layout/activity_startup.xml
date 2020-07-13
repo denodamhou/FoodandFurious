@@ -21,14 +21,17 @@
         android:textStyle="bold" />
 
     <Button
+        android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
+        android:onClick="onButtonLogin"
         >
 
     </Button>
 
     <Button
+        android:id="@+id/signup_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/signup"
