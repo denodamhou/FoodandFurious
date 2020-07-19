@@ -15,7 +15,7 @@ public class StartupActivity extends AppCompatActivity {
         Button login = (Button) findViewById(R.id.login_button);
         login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), LoginActivity.class);
+                Intent myIntent = new Intent(view.getContext(), FoodActivity.class);
                 startActivityForResult(myIntent, 0);
             }
 
