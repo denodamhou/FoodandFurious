@@ -5,6 +5,15 @@ public class Food {
     private String Name;
     private String Price;
     private String Info;
+    private String Img;
+
+    public String getImg() {
+        return Img;
+    }
+
+    public void setImg(String img) {
+        Img = img;
+    }
 
     public String getName() {
         return Name;

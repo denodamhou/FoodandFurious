@@ -2,11 +2,10 @@ package com.example.foodandfurious;
 
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -14,14 +13,17 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.gson.Gson;
+
 
 public class FoodActivity extends AppCompatActivity {
     RecyclerView recyclerView;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Fresco.initialize(this);
 
         setContentView(R.layout.activity_food);
         //make a reference to the RecyclerView
@@ -43,14 +45,14 @@ public class FoodActivity extends AppCompatActivity {
 
     private void loadFoods(){
 
-        String url = "https://my.api.mockaroo.com/users.json?key=05cf9190";
+        String url = "https://my.api.mockaroo.com/foods.json?key=05cf9190";
         StringRequest request = new StringRequest(url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Gson gson = new Gson();
                 Food[] foods = gson.fromJson(response,Food[].class);
-                System.out.println(foods);
-                FoodAdabpter adapter = new FoodAdabpter(foods);
+
+                FoodAdapter adapter = new FoodAdapter(foods);
 //                System.out.println(adapter);
                 recyclerView.setAdapter(adapter);
             }

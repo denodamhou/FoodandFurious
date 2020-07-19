@@ -23,7 +23,8 @@
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:textAlignment="center"
-            android:text="@string/greeting_text"/>
+            android:text="@string/greeting_text"
+            android:gravity="center_horizontal" />
 
 
     </LinearLayout>
