@@ -13,12 +13,21 @@ public class StartupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_startup);
         Button login = (Button) findViewById(R.id.login_button);
+        Button signup = (Button) findViewById(R.id.signup_button);
         login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), FoodActivity.class);
+                Intent myIntent = new Intent(view.getContext(), LoginActivity.class);
+                startActivityForResult(myIntent, 0);
+            }
+
+        });
+        signup.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), SignupActivity.class);
                 startActivityForResult(myIntent, 0);
             }
 
         });
     }
 }
+

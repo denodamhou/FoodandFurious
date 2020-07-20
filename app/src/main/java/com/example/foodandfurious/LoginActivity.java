@@ -7,16 +7,17 @@ import android.view.View;
 import android.widget.Button;
 
 public class LoginActivity extends AppCompatActivity {
-
+Button Login_button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Button homepage = (Button) findViewById(R.id.login_button);
-        homepage.setOnClickListener(new View.OnClickListener() {
+        Login_button = findViewById(R.id.login_button);
+
+        Login_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), FoodActivity.class);
-                startActivityForResult(myIntent, 0);
+                startActivity(new Intent( LoginActivity.this,FoodActivity.class));
             }
 
         });

@@ -41,23 +41,18 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/signup_discribtion"
+            android:text="Checkout Information"
             android:layout_marginLeft="20dp"/>
 
         <EditText
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:hint="@string/username"
+            android:hint="Name"
             />
         <EditText
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:hint="@string/password"
-            />
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/retype_password"
+            android:hint="Location"
             />
         <EditText
             android:layout_width="200dp"
@@ -67,8 +62,7 @@
         <Button
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="@string/signup"
-            android:textColor="@android:color/black"
-            android:id="@+id/signup_button"/>
+            android:text="Checkout"
+            android:textColor="@android:color/black"/>
     </LinearLayout>
 </LinearLayout>
