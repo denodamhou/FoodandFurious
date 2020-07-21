@@ -26,6 +26,17 @@
             android:text="@string/greeting_text"
             android:gravity="center_horizontal" />
 
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/f_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Foodname"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
+
 
     </LinearLayout>
 

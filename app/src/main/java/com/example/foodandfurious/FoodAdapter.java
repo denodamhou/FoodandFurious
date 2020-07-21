@@ -9,9 +9,10 @@ import android.view.ViewGroup;
 public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder> {
 
     private Food[] foods;
-
-    public FoodAdapter(Food[] foods) {
+    private onFoodListener foodListener;
+    public FoodAdapter(Food[] foods, onFoodListener foodListener) {
         this.foods = foods;
+        this.foodListener = foodListener;
     }
 
     @NonNull
@@ -21,7 +22,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder> {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View itemView = layoutInflater.inflate(R.layout.view_holder_food, parent, false);
 
-       return new FoodViewHolder(itemView);
+       return new FoodViewHolder(itemView,foodListener);
     }
 
     @Override
@@ -33,5 +34,8 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder> {
     @Override
     public int getItemCount() {
         return foods.length;
+    }
+    public interface onFoodListener{
+        void onFoodClick(int position);
     }
 }

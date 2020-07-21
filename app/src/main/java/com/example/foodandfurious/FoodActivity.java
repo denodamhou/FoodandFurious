@@ -1,6 +1,7 @@
 package com.example.foodandfurious;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,9 +18,9 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.gson.Gson;
 
 
-public class FoodActivity extends AppCompatActivity {
+public class FoodActivity extends AppCompatActivity implements FoodAdapter.onFoodListener{
     RecyclerView recyclerView;
-
+    Food[] foods;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,22 +38,20 @@ public class FoodActivity extends AppCompatActivity {
 //        Food[] foods = loadFoods();
 //        FoodAdabpter adabpter = new FoodAdabpter(foods);
 //        recyclerView.setAdapter(adabpter);
-        loadFoods();
-
-
+        loadFoods(this);
 
     }
 
-    private void loadFoods(){
+    private void loadFoods(final FoodAdapter.onFoodListener onFoodListener){
 
         String url = "https://my.api.mockaroo.com/foods.json?key=05cf9190";
         StringRequest request = new StringRequest(url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Gson gson = new Gson();
-                Food[] foods = gson.fromJson(response,Food[].class);
+                foods = gson.fromJson(response,Food[].class);
 
-                FoodAdapter adapter = new FoodAdapter(foods);
+                FoodAdapter adapter = new FoodAdapter(foods,onFoodListener);
 //                System.out.println(adapter);
                 recyclerView.setAdapter(adapter);
             }
@@ -63,6 +62,18 @@ public class FoodActivity extends AppCompatActivity {
                 Log.d("data","Load error : " + error.getMessage());
             }
         });
+
         Volley.newRequestQueue(this).add(request);
+    }
+
+    @Override
+    public void onFoodClick(int position) {
+        Log.d("click","position: "+position);
+        Intent intent = new Intent(this,FoodDetailActivity.class);
+        intent.putExtra("name",foods[position].getName());
+        intent.putExtra("price",foods[position].getPrice());
+        intent.putExtra("info",foods[position].getInfo());
+        intent.putExtra("img",foods[position].getImg());
+        startActivity(intent);
     }
 }
